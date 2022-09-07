@@ -15,18 +15,19 @@ void SortMassive(int[] array)
 {
     for(int i = 0; i < array.Length-1; i++)
     {
-        int minPos = i;
+        //int minPos = i;
+        int maxPos = i;
         for(int j = i + 1; j < array.Length; j++)
         {
-            if(array[j] < array[minPos]) minPos = j;  
+            if(array[j] > array[maxPos]) maxPos = j;  
         }
 
         int temp = array[i];
-        array[i] = array[minPos];
-        array[minPos] = temp;
+        array[i] = array[maxPos];
+        array[maxPos] = temp;
     }
 }
-
+PrintArray(arr);
 
 SortMassive(arr);
 PrintArray(arr);
